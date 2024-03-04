@@ -14,6 +14,7 @@ const errorDisplay = document.querySelector('.error');
 
 loader.style.display = 'block';
 errorDisplay.style.display = 'none';
+
 try {
   select.style.display = 'none';
   fetchBreed().then(response => {

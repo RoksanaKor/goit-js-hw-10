@@ -27,6 +27,11 @@ const fetchCatByBreed = breedId => {
   return axios
     .get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
     .then(response => {
+      if (response.data.length === 0) {
+        Notiflix.Notify.failure(
+          'Oops! Something went wrong! Try reloading the page!'
+        );
+      }
       return response.data[0];
     })
     .catch(error =>
